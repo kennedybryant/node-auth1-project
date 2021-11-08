@@ -17,15 +17,16 @@ function find() {
 /**
   resolves to an ARRAY with all users that match the filter condition
  */
-function findBy(filter) {
+async function findBy(filter) {
   return db('users').where(filter)
+
 }
 
 /**
   resolves to the user { user_id, username } with the given user_id
  */
 function findById(user_id) {
-  return db('user')
+  return db('users')
   .select('user_id', 'username')
   .where('user_id', user_id)
   .first()
